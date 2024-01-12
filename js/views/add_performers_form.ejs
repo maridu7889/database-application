@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавление новой информации об исполнителе</title>
+  <style>
+    body {
+      background-color: black;
+      color: black;
+      text-align: center;
+      
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: white; 
+      text-shadow: 0 0 10px #FF99CC, 0 0 20px #FF99CC, 0 0 30px #FF99CC;
+    }
+
+    form {
+      margin: 30px auto;
+      width: 50%; 
+      padding: 40px;
+      text-align: left; 
+      border: 6px double white; 
+      border-radius: 10px; 
+      background-color: #FF99CC;
+    }
+    
+
+    
+
+    input[type="submit"], button {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 3px solid white; 
+      background-color: #FF66CC; 
+      transition: background-color 0.3s, color 0.3s; 
+    }
+
+    input[type="submit"]:hover, button:hover {
+      background-color: #FF99CC; 
+      color: white; 
+    }
+
+    button {
+      font-weight: bold;
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      border: 3px double white;
+      color: white;
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    input[type="submit"]:hover, button:hover {
+      background-color: #FF99CC;
+      color: black;
+      border: 3px double black; 
+      
+    }
+
+    button:hover {
+      font-weight: bold;
+      background-color: #FF99CC;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добавить новую информацию об исполнителе</h1>
+
+  <form action="/savePerformers" method="post">
+    <label for="employeecodeInput">Код сотрудника:</label>
+    <select id="employeecodeInput" name="employeecode" required>
+      <option value="40">40</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+      <option value="43">43</option>
+      <option value="44">44</option>
+      <option value="45">45</option>
+      <option value="46">46</option>
+      <option value="47">47</option>
+      <option value="48">48</option>
+      <option value="49">49</option>
+      <option value="50">50</option>
+      <option value="51">51</option>
+      <option value="52">52</option>
+      <option value="53">53</option>
+      
+      
+      
+      
+    </select> <br><br>
+    <label for="eventcodeInput">Код мероприятия:</label>
+    <select id="eventcodeInput" name="eventcode" required>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      
+      
+      
+      
+    </select> <br><br>
+    <label for="eventnameInput">Название мероприятия:</label>
+    <input type="text" id="eventnameInput" name="eventname" required><br><br>
+    <label for="startInput">Дата начала (ГГГГ-ММ-ДД ЧЧ-ММ-СС):</label>
+    <input type="text" id="startInput" name="start" required><br><br>
+    <label for="endInput">Дата окончания (ГГГГ-ММ-ДД ЧЧ-ММ-СС):</label>
+    <input type="text" id="endInput" name="end" required><br><br>
+    <input type="submit" value="сохранить">
+  </form>
+  <br> <button onclick="location.href='/performers'">вернуться к формам</button>
+  <br> 
+</body>
+</html>

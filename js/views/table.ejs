@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таблица с данными</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #3300CC;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #3300CC;
+    }
+  </style>
+</head>
+<body>
+  
+
+   
+
+  <h1>Таблица с данными</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Код мероприятия</th>
+        <th>Название мероприятия</th>
+        <th>Тип мероприятия</th>
+        <th>Дата утверждения</th>
+        <th>Описание мероприятие</th>
+        <th>Код сотрудника</th>
+        <th>Состояние мероприятие</th>
+        <th>Место проведения</th>
+        <th>Плановые расходы(руб)</th>
+        <th>Актуальные расходы(руб)</th>
+        <th>Плановое кол-во чел</th>
+        <th>Актуальное кол-во чел</th>
+        <th>Код заказчика</th>
+        <th>Начало мероприятие</th>
+        <th>Конец мероприятие</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(row => { %>
+        <tr>
+          <td><%= row.eventcode %></td>
+          <td><%= row.eventname %></td>
+          <td><%= row.eventtypecode %></td>
+          <td><%= row.dateofapproval %></td>
+          <td><%= row.descriptionoftheevent %></td>
+          <td><%= row.employeecode %></td>
+          <td><%= row.condition %></td>
+          <td><%= row.venue %></td>
+          <td><%= row.plannedexpenses %></td>
+          <td><%= row.actualexpenses %></td>
+          <td><%= row.plannednumberP %></td>
+          <td><%= row.actualnumberP %></td>
+          <td><%= row.customercode %></td>
+          <td><%= row.start %></td>
+          <td><%= row.end %></td>
+
+
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+
+  
+  
+  <button onclick="location.href='/getDataByMonth'"><b>Вернуться к выбору меясца </b></button>
+  
+  <br>
+  
+  
+    
+</body>
+</html>

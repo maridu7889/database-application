@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавление нового заказчика</title>
+  <style>
+    body {
+      background-color: black;
+      color: black;
+      text-align: center;
+      
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: white; 
+      text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7;
+    }
+
+    form {
+      margin: 0 auto;
+      width: 50%; 
+      padding: 30px;
+      text-align: left; 
+      border: 6px double white; 
+      border-radius: 10px; 
+      background-color: pink;
+    }
+    
+
+    
+
+    input[type="submit"], button {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 3px solid white; 
+      background-color: #FF66CC; 
+      transition: background-color 0.3s, color 0.3s; 
+    }
+
+    input[type="submit"]:hover, button:hover {
+      background-color: pink; 
+      color: white; 
+    }
+
+    button {
+      font-weight: bold;
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      border: 3px double white;
+      color: white;
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    input[type="submit"]:hover, button:hover {
+      background-color: pink;
+      color: black;
+      border: 3px double black; 
+      
+    }
+
+    button:hover {
+      font-weight: bold;
+      background-color: pink;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добавить нового заказчика</h1>
+
+  <form action="/saveCustomers" method="post">
+    <label for="customercodeInput">Код заказчика:</label>
+    <select id="customercodeInput" name="customercode" required>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      
+      
+      
+    </select> <br><br>
+
+    <label for="companynameInput">Название компании:</label>
+    <input type="text" id="companynameInput" name="companyname" required><br><br>
+
+    <label for="directorInput">Руководитель:</label>
+    <input type="text" id="directorInput" name="director" required><br><br>
+
+    <label for="contactpersonInput">Контактное лицо:</label>
+    <input type="text" id="contactpersonInput" name="contactperson" required><br><br>
+
+    <label for="addressInput">Адрес компании:</label>
+    <input type="text" id="addressInput" name="address" required><br><br>
+
+    <label for="telephoneInput">Телефон:</label>
+    <input type="text" id="telephoneInput" name="telephone" required value="+7"><br><br>
+
+    <label for="emailInput">Электронный адрес:</label>
+    <input type="text" id="emailInput" name="email" required><br><br>
+
+    <label for="additionalinformationInput">Дополнительная информация:</label>
+    <textarea id="additionalinformationInput" name="additionalinformation" rows="4" cols="20" required></textarea><br><br>
+
+    
+
+    <input type="submit" value="сохранить">
+  </form>
+  <br> <button onclick="location.href='/customers'">вернуться к формам</button>
+  <br> 
+</body>
+</html>

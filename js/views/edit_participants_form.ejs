@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details and Editing</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 40px;
+      margin-left:20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #FF9933;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #FF9933;
+    }
+    .button-container {
+      margin-top:-80px;
+      margin-left:250px;
+    
+    }
+  </style>
+</head>
+<body>
+  <h1>Информация об участнике</h1>
+  <form action="/updateparticipants" method="post">
+    <table>
+      <tr>
+        <th>Код участника</th>
+        <th>ФИО</th>
+        <th>Пол (Ж,М) </th>
+        <th>Возраст (y.o)</th>
+        <th>Социальный статус</th>
+        <th>Код мероприятия</th>
+        <th>Дополнительная информация</th>
+        <th>Код заказчика</th>
+        <th>Дата начала мероприятия</th>
+        
+      </tr>
+      <tr>
+        <td><input type="text" name="participantcode" value="<%= employee.participantcode %>"></td>
+        <td><input type="text" name="FIO" value="<%= employee.FIO %>"></td>
+        <td><input type="text" name="gender" value="<%= employee.gender %>"></td>
+        <td><input type="text" name="age" value="<%= employee.age %>"></td>
+        <td><input type="text" name="socialstatus" value="<%= employee.socialstatus %>"></td>
+        <td><input type="text" name="eventcode" value="<%= employee.eventcode %>"></td>
+        <td><input type="text" name="additionalinformation" value="<%= employee.additionalinformation %>"></td>
+        <td><input type="text" name="customercode" value="<%= employee.customercode %>"></td>
+        <td><input type="text" name="startdate" value="<%= employee.startdate %>"></td>
+        
+      </tr>
+    </table>
+    <button type="submit">Редактировать информацию</button>
+  </form>
+  <form action="/deleteparticipants" method="post">
+    <input type="hidden" name="participantcode" value="<%= employee.participantcode %>">
+    <div class="button-container">
+    <button type="submit">Удалить участника</button>
+  </div>
+  </form>
+  <br> <button onclick="location.href='/participants'">вернуться к формам</button>
+  <br> 
+</body>
+</html>

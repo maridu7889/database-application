@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавление нового участника</title>
+  <style>
+    body {
+      background-color: black;
+      color: black;
+      text-align: center;
+      
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: white; 
+      text-shadow: 0 0 10px #FF9966, 0 0 20px #FF9966, 0 0 30px #FF9966;
+    }
+
+    form {
+      margin: 0 auto;
+      width: 50%; 
+      padding: 30px;
+      text-align: left; 
+      border: 6px double white; 
+      border-radius: 10px; 
+      background-color: #CC9966;
+    }
+    
+
+    
+
+    input[type="submit"], button {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 3px solid white; 
+      background-color: #FF9933; 
+      transition: background-color 0.3s, color 0.3s; 
+    }
+
+    input[type="submit"]:hover, button:hover {
+      background-color: #CC9966; 
+      color: white; 
+    }
+
+    button {
+      font-weight: bold;
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      border: 3px double white;
+      color: white;
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    input[type="submit"]:hover, button:hover {
+      background-color: #CC9966;
+      color: black;
+      border: 3px double black; 
+      
+    }
+
+    button:hover {
+      font-weight: bold;
+      background-color: #CC9966;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добавить нового участника</h1>
+
+  <form action="/saveParticipants" method="post">
+    <label for="participantcodeInput">Код участника:</label>
+    <input type="text" id="participantcodeInput" name="participantcode" required><br><br>
+    
+
+    <label for="FIOInput">Фамилия Имя Отчество:</label>
+    <textarea id="FIOInput" name="FIO" rows="1" cols="30" required></textarea><br><br>
+    
+
+    <label for="genderInput">Пол (Ж, М):</label>
+    
+    <select id="genderInput" name="gender" required>
+      <option value="W">w</option>
+      <option value="M">m</option>
+
+    </select><br><br>
+
+
+    <label for="ageInput">Возраст:</label>
+    <input type="text" id="ageInput" name="age" required><br><br>
+
+    <label for="socialstatusInput">Социальный статус (высший класс, средний класс, низший класс ):</label>
+    <select id="socialstatusInput" name="socialstatus" required>
+      <option value="upper">upper</option>
+      <option value="middle">middle</option>
+      <option value="lower">lower</option>
+
+    </select> <br><br>
+
+    <label for="eventcodeInput">Код мероприятия:</label>
+    <select id="eventcodeInput" name="eventcode" required>
+      <option value="20">20</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+      <option value="25">25</option>
+      <option value="26">26</option>
+      <option value="27">27</option>
+      <option value="28">28</option>
+      <option value="29">29</option>
+      <option value="30">30</option>
+      <option value="31">31</option>
+      
+      
+      
+    </select> <br><br>
+
+    <label for="additionalinformationInput">Дополнительная информация:</label>
+    <textarea id="additionalinformationInput" name="additionalinformation" rows="2" cols="20" required></textarea><br><br>
+
+    <label for="customercodeInput">Код заказчика:</label>
+    <select id="customercodeInput" name="customercode" required>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      
+      
+      
+    </select> <br><br>
+
+    <label for="startdateInput">Дата начала мероприятия(ГГГГ-ММ-ДД):</label>
+    <input type="text" id="startdateInput" name="startdate" required><br><br>
+
+    <input type="submit" value="сохранить">
+  </form>
+  <br> <button onclick="location.href='/participants'">вернуться к формам</button>
+  <br> 
+</body>
+</html>

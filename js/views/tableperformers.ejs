@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Таблица для поиска исполнителя мероприятия по коду сотрудника</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #CC0066;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #CC0066;
+    }
+  </style>
+</head>
+<body>
+  <h1>Таблица для поиска исполнителя  по коду сотрудника "<%= data[0].employeecode %>"</h1>
+
+  <table>
+    <tr>
+      <th>Код мероприятия</th>
+      <th>Код сотрудника</th>
+      <th>Название мероприятия</th>
+      <th>Дата и время начала мероприятия</th>
+      <th>Дата и время конца мероприятия</th>
+    </tr>
+    <% data.forEach(row => { %>
+      <tr>
+        <td><%= row.eventcode %></td>
+        <td><%= row.employeecode %></td>
+        <td><%= row.eventname %></td>
+        <td><%= row.start %></td>
+        <td><%= row.end %></td>
+      </tr>
+    <% }); %>
+  </table>
+  <br> <button onclick="location.href='/performers'">вернуться к формам</button>
+  <br> 
+
+</body>
+</html>

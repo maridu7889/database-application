@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Таблица заработной платы по должности</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #6633FF;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #6633FF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Таблица заработной платы по должности "<%= data[0].jobtitle %>"</h1>
+
+  <table>
+    <tr>
+      <th>Должность</th>
+      <th>Заработная плата (Руб)</th>
+    </tr>
+    <% data.forEach(row => { %>
+      <tr>
+        <td><%= row.jobtitle %></td>
+        <td><%= row.wages %></td>
+      </tr>
+    <% }); %>
+  </table>
+  <br> <button onclick="location.href='/job'">вернуться к формам</button>
+  <br> 
+
+</body>
+</html>

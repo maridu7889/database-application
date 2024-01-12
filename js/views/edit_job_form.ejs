@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details and Editing</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 40px;
+      margin-left:20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #6666FF;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #6666FF;
+    }
+    .button-container {
+      margin-top:-80px;
+      margin-left:250px;
+    
+    }
+  </style>
+</head>
+<body>
+  <h1>Информация о сотруднике</h1>
+  <form action="/updateJob" method="post">
+    <table>
+      <tr>
+        <th>Должность</th>
+        <th>Заработная плата (руб)</th>
+        
+      </tr>
+      <tr>
+        <td><input type="text" name="jobtitle" value="<%= employee.jobtitle %>"></td>
+        <td><input type="text" name="wages" value="<%= employee.wages %>"></td>
+        
+      </tr>
+    </table>
+    <button type="submit">Редактировать информацию</button>
+  </form>
+  <form action="/deleteJob" method="post">
+    <input type="hidden" name="jobtitle" value="<%= employee.jobtitle %>">
+    <div class="button-container">
+    <button type="submit">Удалить должность</button>
+  </div>
+  </form>
+  <br> <button onclick="location.href='/job'">вернуться к формам</button>
+  <br> 
+</body>
+</html>

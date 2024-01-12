@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details and Editing</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 40px;
+      margin-left:20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #FF66CC;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #FF66CC;
+    }
+    .button-container {
+      margin-top:-80px;
+      margin-left:250px;
+    
+    }
+  </style>
+</head>
+<body>
+  <h1>Информация об исполнителе</h1>
+  <form action="/updateperformers" method="post">
+    <table>
+      <tr>
+        <th>Код мероприятия</th>
+        <th>Код сотрудника</th>
+        <th>Название мероприятия </th>
+        <th>Начало мероприятия</th>
+        <th>Конец мероприятия</th>
+        
+      </tr>
+      <tr>
+        <td><input type="text" name="eventcode" value="<%= employee.eventcode %>"></td>
+        <td><input type="text" name="employeecode" value="<%= employee.employeecode %>"></td>
+        <td><input type="text" name="eventname" value="<%= employee.eventname %>"></td>
+        <td><input type="text" name="start" value="<%= employee.start %>"></td>
+        <td><input type="text" name="end" value="<%= employee.end %>"></td>
+        
+      </tr>
+    </table>
+    <button type="submit">Редактировать информацию</button>
+  </form>
+  <form action="/deleteperformers" method="post">
+    <input type="hidden" name="employeecode" value="<%= employee.employeecode %>">
+    <div class="button-container">
+    <button type="submit">Удалить исполнителя</button>
+  </div>
+  </form>
+  <br> <button onclick="location.href='/performers'">вернуться к формам</button>
+  <br> 
+</body>
+</html>

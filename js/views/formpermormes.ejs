@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма для получения данных об исполнителе мероприятия по коду сотрудника</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 0 0 10px #FF99CC, 0 0 20px #FF99CC, 0 0 30px #FF99CC;
+    }
+
+    form {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #FF99CC;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+
+    label {
+      color: black;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid white;
+      border-radius: 5px;
+      color: black;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 20px;
+      background-color: #FF99CC;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #FF99CC;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 20px;
+      background-color: #FF99CC;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #FF99CC;
+    }
+  </style>
+</head>
+<body>
+  <h1>Введите код сотрудника</h1>
+
+  
+
+    <form action="/get_table_by_permormes" method="post">
+        <label for="employeecodeInput">Код сотрудника:</label>
+        <input type="number" id="employeecodeInput" name="employeecode" min="40" max="51" required>
+        <input type="submit" value="Получить таблицу">
+      </form>
+
+</body>
+</html>

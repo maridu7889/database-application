@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма для получения размера заработной платы</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 0 0 10px #6633FF, 0 0 20px #6633FF, 0 0 30px #6633FF;
+    }
+
+    form {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #6633FF;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+
+    label {
+      color: black;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid white;
+      border-radius: 5px;
+      color: black;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 20px;
+      background-color: #6633FF;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #6633FF;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 20px;
+      background-color: #6633FF;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #6633FF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Введите должность для получения размера заработной платы </h1>
+
+  
+
+    <form action="/get_table_by_job" method="post">
+        <label for="jobtitleInput">Должность:</label>
+        <select id="jobtitleInput" name="jobtitle" required>
+          <option value="administrator">administrator</option>
+          <option value="accountant">accountant</option>
+          <option value="director">director</option>
+          <option value="manager">manager</option>
+          <option value="Event organizer">Event organizer</option>
+          <option value="Assistant Director">Assistant Director</option>
+          <option value="lawyer">lawyer</option>
+          
+        </select>
+        <input type="submit" value="Получить таблицу">
+      </form>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details and Editing</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 40px;
+      margin-left:20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #CC33FF;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #CC33FF;
+    }
+    .button-container {
+      margin-top:-80px;
+      margin-left:250px;
+    
+    }
+  </style>
+</head>
+<body>
+  <h1>Информация о мероприятии</h1>
+  <form action="/updateevents" method="post">
+    <table>
+      <tr>
+        <th>Код мероприятия</th>
+      <th>Название мероприятия</th>
+      <th>Тип мероприятия</th>
+      <th>Дата утверждения</th>
+      <th>Описание мероприятия</th>
+      <th>Отвественное лицо</th>
+      <th>Состояние</th>
+      <th>Место проведение</th>
+      <th>Плановые расходы (руб)</th>
+      <th>Актуальные расходы (руб)</th>
+      <th>Планируемое кол-во участников</th>
+      <th>Актуальное кол-во участников</th>
+      <th>Код заказчика</th>
+      <th>Дата и время начала мероприятия</th>
+      <th>Дата и время окончания мероприятия</th>
+        
+      </tr>
+      <tr>
+        <td><input type="text" name="eventcode" value="<%= employee.eventcode %>"></td>
+        <td><input type="text" name="eventname" value="<%= employee.eventname %>"></td>
+        <td><input type="text" name="eventtypecode" value="<%= employee.eventtypecode %>"></td>
+        <td><input type="text" name="dateofapproval" value="<%= employee.dateofapproval %>"></td>
+        <td><input type="text" name="descriptionoftheevent" value="<%= employee.descriptionoftheevent %>"></td>
+        <td><input type="text" name="employeecode" value="<%= employee.employeecode %>"></td>
+        <td><input type="text" name="condition" value="<%= employee.condition %>"></td>
+        <td><input type="text" name="venue" value="<%= employee.venue %>"></td>
+        <td><input type="text" name="plannedexpenses" value="<%= employee.plannedexpenses %>"></td>
+        <td><input type="text" name="actualexpenses" value="<%= employee.actualexpenses %>"></td>
+        <td><input type="text" name="plannednumberP" value="<%= employee.plannednumberP %>"></td>
+        <td><input type="text" name="actualnumberP" value="<%= employee.actualnumberP %>"></td>
+        <td><input type="text" name="customercode" value="<%= employee.customercode %>"></td>
+        <td><input type="text" name="start" value="<%= employee.start %>"></td>
+        <td><input type="text" name="end" value="<%= employee.end %>"></td>
+        
+      </tr>
+    </table>
+    <button type="submit">Редактировать информацию</button>
+  </form>
+  <form action="/deleteevents" method="post">
+    <input type="hidden" name="eventcode" value="<%= employee.eventcode %>">
+    <div class="button-container">
+    <button type="submit">Удалить мероприятие</button>
+  </div>
+  </form>
+
+  <br> <button onclick="location.href='/events'">вернуться к формам</button>
+  <br> 
+
+  
+</body>
+</html>

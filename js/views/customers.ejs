@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Основная страница</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1, h2 {
+      color: white;
+      text-shadow: 0 0 10px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7; 
+    }
+
+    button {
+      margin: 10px;
+      padding: 15px 30px;
+      border: 3px solid #ff6ec7;
+      border-radius: 10px;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease; 
+    }
+
+    button:hover {
+      background-color: #ff6ec7; 
+      color: white; 
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; 
+      transform: scale(1.1); 
+    }
+  </style>
+</head>
+<body>
+ 
+ 
+      <h1>Главная страница</h1>
+      <h2>Выберете действие</h2>
+
+      
+   
+  
+  
+ 
+  <br> <button onclick="location.href='/getDataCustomers'">Открыть форму <b>"Заказчики"</b> для поиска заказчика по коду заказчика</button>
+  <br>
+  <br> <button onclick="location.href='/addCustomers'">Открыть форму <b>"Заказчики"</b> для добавления нового заказчика</button>
+  <br>
+  <br> <button onclick="location.href='/customersCodeForm'">Открыть форму <b>"Заказчики"</b> для изменения/удаления данных</button>
+  <br>
+  <br> <button onclick="location.href='/'">вернуться на главную страницу</button>
+  <br>
+ 
+
+
+
+ 
+
+</body>
+</html>

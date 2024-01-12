@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Таблица данных об участниках</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #FF9933;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #FF9933;
+    }
+  </style>
+</head>
+<body>
+  <h1>Таблица данных об участниках на мероприятии с кодом "<%= data[0].eventcode %>"</h1>
+
+  <table>
+    <tr>
+      <th>Код участника</th>
+      <th>ФИО</th>
+      <th>Пол (Ж,М)</th>
+      <th>Возраст (y.o)</th>
+      <th>Социальный статус</th>
+      <th>Код мероприятия</th>
+      <th>Дополнительная информация</th>
+      <th>Код заказчика</th>
+      <th>Дата начала мероприятия</th>
+    </tr>
+    <% data.forEach(row => { %>
+      <tr>
+        <td><%= row.participantcode %></td>
+        <td><%= row.FIO %></td>
+        <td><%= row.gender %></td>
+        <td><%= row.age %></td>
+        <td><%= row.socialstatus %></td>
+        <td><%= row.eventcode %></td>
+        <td><%= row.additionalinformation %></td>
+        <td><%= row.customercode %></td>
+        <td><%= row.startdate %></td>
+      </tr>
+    <% }); %>
+  </table>
+  <br> <button onclick="location.href='/participants'">вернуться к формам</button>
+  <br> 
+
+</body>
+</html>

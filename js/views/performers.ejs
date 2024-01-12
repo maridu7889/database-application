@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Основная страница</title>
+</head>
+<body>
+ 
+ 
+      <h1>Главная страница</h1>
+      <h2>Выберете действие</h2>
+
+      <style>
+        body {
+          background-color: black;
+          color: white;
+          text-align: center;
+          font-family: Arial, sans-serif;
+        }
+    
+        h1, h2 {
+          color: white;
+          text-shadow: 0 0 10px #CC0066, 0 0 20px #CC0066, 0 0 30px #CC0066; 
+        }
+    
+        button {
+          margin: 10px;
+          padding: 15px 30px;
+          border: 3px solid #CC0066;
+          border-radius: 10px;
+          background-color: white;
+          color: black;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s ease; 
+        }
+    
+        button:hover {
+          background-color: #CC0066; 
+          color: white; 
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; 
+          transform: scale(1.1); 
+        }
+      </style>
+   
+  
+  
+  
+  <br> <button onclick="location.href='/getDataPerformes'">Открыть форму <b>"Исполнители"</b> для поиска исполнителя мероприятие по коду сотрудника</button>
+  <br>
+  <br> <button onclick="location.href='/addPerformers'">Открыть форму <b>"Исполнители"</b> и добавить новые данные</button>
+  <br>
+  <br> <button onclick="location.href='/performersCodeForm'">Открыть форму <b>"Исполнители"</b> и изменить/удалить данные</button>
+  <br>
+  <br> <button onclick="location.href='/'">вернуться на главную страницу</button>
+  <br>
+ 
+
+
+
+
+
+</body>
+</html>

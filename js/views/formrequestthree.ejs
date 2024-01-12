@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запрос 3</title>
+    <style>
+        body {
+          background-color: black;
+          color: white;
+          text-align: center;
+          font-family: Arial, sans-serif;
+          font-weight: bold;
+        }
+    
+        h1 {
+          color: white;
+          text-shadow: 0 0 10px #6633FF, 0 0 20px #6633FF, 0 0 30px #6633FF;
+        }
+    
+        form {
+          display: inline-block;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #6633FF;
+          border: 2px solid white;
+          border-radius: 10px;
+        }
+    
+        label {
+          color: black;
+        }
+    
+        input[type="number"] {
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid white;
+          border-radius: 5px;
+          color: black;
+        }
+    
+        input[type="submit"] {
+          margin-top: 20px;
+          padding: 10px 15px;
+          border: 2px solid white;
+          border-radius: 20px;
+          background-color: #6633FF;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: black;
+          color: white;
+          border: 2px solid #6633FF;
+        }
+    
+        button {
+          margin-top: 20px;
+          padding: 10px 15px;
+          border: 2px solid white;
+          border-radius: 20px;
+          background-color: #6633FF;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+    
+        button:hover {
+          background-color: black;
+          color: white;
+          border: 2px solid #6633FF;
+        }
+        table {
+          background-color: white;
+          border: 2px solid white;
+          border-radius: 10px;
+          width: 70%; 
+          margin: 20px auto; 
+          color: black;
+          font-family: Arial, sans-serif;
+        }
+        th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+          color: black;
+        }
+        th {
+          background-color: white;
+          color: black;
+        }
+        
+      </style>
+    
+</head>
+<body>
+    <h1>Введите код мероприятия </h1>
+    <form action="/get_requestthree_by_request" method="post">
+        <label for="eventcode">Код мероприятия:</label>
+        <input type="number" id="eventcode" name="eventcode" min="20" max="31" required>
+        <button type="submit">Получить таблицу</button>
+    </form>
+    <% if (data) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Код мероприятия</th>
+                    <th>Название мероприятия</th>
+                    <th>Планируемое кол-во участников</th>
+                    <th>Фактическое кол-во участников</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(row) { %>
+                    <tr>
+                        <td><%= row.eventcode %></td>
+                        <td><%= row.eventname %></td>
+                        <td><%= row.plannednumberP %></td>
+                        <td><%= row.actualnumberP %></td>
+                        
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } %>
+
+
+    <br> <button onclick="location.href='/request'">вернуться к списку запросов</button>
+</body>
+</html>

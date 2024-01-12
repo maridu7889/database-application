@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма для изменения/удаление должностей</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 0 0 10px #6633FF, 0 0 20px #6633FF, 0 0 30px #6633FF; 
+    }
+
+    form {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #6633FF; 
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+
+    label {
+      color: black; 
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid white;
+      border-radius: 5px;
+      color: black; 
+    }
+
+    button[type="submit"] {
+      font-weight: bold;
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 20px;
+      background-color: #6633FF; 
+      color: white; 
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: black; 
+      color: white; 
+      border: 2px solid #6633FF; 
+    }
+  </style>
+</head>
+<body>
+  <h1>Введите название должности</h1>
+  <form action="/editJob" method="post">
+    <label for="jobtitleInput">Название должности:</label>
+    <input type="text" name="jobtitle"  required>
+    <button type="submit">Найти информацию</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details and Editing</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    table {
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 70%; 
+      margin: 20px auto; 
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      color: black;
+    }
+    th {
+      background-color: white;
+      color: black;
+    }
+    button {
+      margin-top: 40px;
+      margin-left:20px;
+      padding: 10px 15px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: #ff6ec7;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+      border: 2px solid #ff6ec7;
+    }
+    .button-container {
+      margin-top:-80px;
+      margin-left:250px;
+    
+    }
+  </style>
+</head>
+<body>
+  <h1>Информация о заказчике</h1>
+  <form action="/updatecustomers" method="post">
+    <table>
+      <tr>
+        <th>Код заказчика</th>
+        <th>Название компании</th>
+        <th>Руководитель </th>
+        <th>Контактное лицо</th>
+        <th>Адресс компании</th>
+        <th>Телефон</th>
+        <th>Электронный адрес</th>
+        <th>Дополнительная информация</th>
+        
+        
+      </tr>
+      <tr>
+        <td><input type="text" name="customercode" value="<%= employee.customercode %>"></td>
+        <td><input type="text" name="companyname" value="<%= employee.companyname %>"></td>
+        <td><input type="text" name="director" value="<%= employee.director %>"></td>
+        <td><input type="text" name="contactperson" value="<%= employee.contactperson %>"></td>
+        <td><input type="text" name="address" value="<%= employee.address %>"></td>
+        <td><input type="text" name="telephone" value="<%= employee.telephone %>"></td>
+        <td><input type="text" name="email" value="<%= employee.email %>"></td>
+        <td><input type="text" name="additionalinformation" value="<%= employee.additionalinformation %>"></td>
+        
+        
+      </tr>
+    </table>
+    <button type="submit">Редактировать информацию</button>
+  </form>
+  <form action="/deletecustomers" method="post">
+    <input type="hidden" name="customercode" value="<%= employee.customercode %>">
+    <div class="button-container">
+    <button type="submit">Удалить заказчика</button>
+    </div>
+  </form>
+  
+  <br> <button onclick="location.href='/customers'">вернуться к формам</button>
+  <br> 
+
+</body>
+</html>

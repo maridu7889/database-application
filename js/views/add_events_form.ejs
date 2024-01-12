@@ -1,0 +1,173 @@
+<!-- add_job_form.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавление нового мероприятия</title>
+  <style>
+    body {
+      background-color: black;
+      color: black;
+      text-align: center;
+      
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: white; 
+      text-shadow: 0 0 10px #CC33FF, 0 0 20px #CC33FF, 0 0 30px #CC33FF;
+    }
+
+    form {
+      margin: 0 auto;
+      width: 50%; 
+      padding: 30px;
+      text-align: left; 
+      border: 6px double white; 
+      border-radius: 10px; 
+      background-color: #CC99FF;
+    }
+    
+
+    
+
+    input[type="submit"], button {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 3px solid white; 
+      background-color: #9900CC; 
+      transition: background-color 0.3s, color 0.3s; 
+    }
+
+    input[type="submit"]:hover, button:hover {
+      background-color: #CC99FF; 
+      color: white; 
+    }
+
+    button {
+      font-weight: bold;
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      border: 3px double white;
+      color: white;
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    input[type="submit"]:hover, button:hover {
+      background-color: #CC99FF;
+      color: black;
+      border: 3px double black; 
+      
+    }
+
+    button:hover {
+      font-weight: bold;
+      background-color: #CC99FF;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добавить новое мероприятие</h1>
+
+  <form action="/saveEvents" method="post">
+    <label for="eventcodeInput">Код мероприятия:</label>
+    <input type="text" id="eventcodeInput" name="eventcode" required><br><br>
+
+    <label for="eventnameInput">Название мероприятия:</label>
+    <input type="text" id="eventnameInput" name="eventname" required><br><br>
+
+    <label for="eventtypecodeInput">Тип мероприятия:<br>1- birthday day<br>2-business meeting<br>3-company party</label>
+    <select id="eventtypecodeInput" name="eventtypecode" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+       
+        
+        
+      </select> <br><br>
+   
+
+    <label for="dateofapprovalInput">Дата утверждения (ГГГГ-ММ-ДД):</label>
+    <input type="text" id="dateofapprovalInput" name="dateofapproval" required><br><br>
+
+    <label for="descriptionoftheeventInput">Описание мероприятия:</label>
+    <textarea id="descriptionoftheeventInput" name="descriptionoftheevent" rows="2" cols="30" required> </textarea><br><br>
+
+    <label for="employeecodeInput">Отвественное лицо(код сотрудника):</label>
+    <select id="employeecodeInput" name="employeecode" required>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        
+        
+      </select> <br><br>
+    
+    
+
+    <label for="conditionInput">Состояние(состоялось/не состоялось/отложенное/запланированное):</label>
+    <select id="conditionInput" name="condition" required>
+        <option value="carried">carried</option>
+        <option value="out not carried">out not carried</option>
+        <option value="postponed">postponed</option>
+        <option value="planned">planned</option>
+        
+        
+      </select> <br><br>
+    
+
+    <label for="venueInput">Место проведение:</label>
+    <input type="text" id="venueInput" name="venue" required><br><br>
+
+    <label for="plannedexpensesInput">Планируемые расходы (руб):</label>
+    <input type="text" id="plannedexpensesInput" name="plannedexpenses" required><br><br>
+
+    <label for="actualexpensesInput">Актуальные расходы(руб):</label>
+    <input type="text" id="actualexpensesInput" name="actualexpenses" required><br><br>
+
+    <label for="plannednumberPInput">Планируемое кол-во участников:</label>
+    <input type="text" id="plannednumberPInput" name="plannednumberP" required><br><br>
+
+    <label for="actualnumberPInput">Актуальное кол-во участников:</label>
+    <input type="text" id="actualnumberPInput" name="actualnumberP" required><br><br>
+
+    <label for="customercodeInput">Код заказчика:</label>
+    <select id="customercodeInput" name="customercode" required>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        
+        
+        
+      </select> <br><br>
+    
+
+    <label for="startInput">Дата начала мероприятия (ГГГГ-ММ-ДД ЧЧ-ММ-СС):</label>
+    <input type="text" id="startInput" name="start" required><br><br>
+
+    <label for="endInput">Дата окончания мероприятия (ГГГГ-ММ-ДД ЧЧ-ММ-СС):</label>
+    <input type="text" id="endInput" name="end" required><br><br>
+
+    <input type="submit" value="сохранить">
+  </form>
+  <br> <button onclick="location.href='/events'">вернуться к формам</button>
+  <br> 
+</body>
+</html>

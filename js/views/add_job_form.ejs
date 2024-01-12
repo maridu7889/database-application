@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Добавление новой должности и заработной платы</title>
+  <style>
+    body {
+      background-color: black;
+      color: black;
+      text-align: center;
+      
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: white; 
+      text-shadow: 0 0 10px #6666FF, 0 0 20px #6666FF, 0 0 30px #6666FF;
+    }
+
+    form {
+      margin: 0 auto;
+      width: 50%; 
+      padding: 30px;
+      text-align: left; 
+      border: 6px double white; 
+      border-radius: 10px; 
+      background-color: #6666FF;
+    }
+    
+
+    
+
+    input[type="submit"], button {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 3px solid white; 
+      background-color: #3300CC; 
+      transition: background-color 0.3s, color 0.3s; 
+    }
+
+    input[type="submit"]:hover, button:hover {
+      background-color: #6666FF; 
+      color: white; 
+    }
+
+    button {
+      font-weight: bold;
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      border: 3px double white;
+      color: white;
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    input[type="submit"]:hover, button:hover {
+      background-color: #6666FF;
+      color: black;
+      border: 3px double black; 
+      
+    }
+
+    button:hover {
+      font-weight: bold;
+      background-color: #6666FF;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добавить новую должность и заработную плату</h1>
+
+  <form action="/saveJob" method="post">
+    <label for="jobtitleInput">Должность:</label>
+    <input type="text" id="jobtitleInput" name="jobtitle" required><br><br>
+    <label for="wagesInput">Заработная плата:</label>
+    <input type="text" id="wagesInput" name="wages" required><br><br>
+    <input type="submit" value="сохранить">
+  </form>
+  <br> <button onclick="location.href='/job'">вернуться к формам</button>
+  <br> 
+</body>
+</html>
